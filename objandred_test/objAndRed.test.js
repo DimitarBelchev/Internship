@@ -2,6 +2,22 @@ const {
   basicReduce,
   reduceWithInitialValue,
   findMinUsingReduce,
+  flattenArrayUsingReduce,
+  countOccurrencesUsingReduce,
+  concatenateStringsUsingReduce,
+  productOfArrayUsingReduce,
+  groupByPropertyUsingReduce,
+  arrayToObjectUsingReduce,
+  convertKeysToArray,
+  convertValuesToArray,
+  convertEntriesToArray,
+  createStringArrayFromEntries,
+  filterEvenAndConvertToArray,
+  swapKeysAndValues,
+  mergeObjectsImmutably,
+  findKeysWithSpecificValue,
+  countProperties,
+  filterObject,
 } = require("./objAndRed.js");
 
 describe("reduce", () => {
