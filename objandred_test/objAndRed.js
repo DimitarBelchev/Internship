@@ -63,6 +63,31 @@ function createStringArrayFromEntries(input) {
   return Object.entries(input).map(([k, v]) => `${k}: ${v}`);
 }
 
+function filterEvenAndConvertToArray(input) {
+  return Object.entries(input)
+    .filter(([_, v]) => v % 2 !== 0)
+    .map(([k]) => k);
+}
+
+function swapKeysAndValues(input) {
+  return Object.entries(input).reduce((acc, [key, value]) => {
+    acc[value] = key;
+    return acc;
+  }, {});
+}
+
+function mergeObjectsImmutably(input1, input2) {
+  return { ...input1, ...input2 };
+}
+
+function findKeysWithSpecificValue(input, value) {
+  return Object.keys(input).filter((k) => input[k] === value);
+}
+
+function countProperties(input) {
+  return Object.keys(input).length;
+}
+
 module.exports = {
   basicReduce,
   reduceWithInitialValue,
@@ -77,10 +102,10 @@ module.exports = {
   convertValuesToArray,
   convertEntriesToArray,
   createStringArrayFromEntries,
-  // filterEvenAndConvertToArray,
-  // swapKeysAndValues,
-  // mergeObjectsImmutably,
-  // findKeysWithSpecificValue,
-  // countProperties,
+  filterEvenAndConvertToArray,
+  swapKeysAndValues,
+  mergeObjectsImmutably,
+  findKeysWithSpecificValue,
+  countProperties,
   // filterObject,
 };
