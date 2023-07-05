@@ -25,6 +25,39 @@ function concatenateStringsUsingReduce(inputArr) {
   return inputArr.reduce((acc, cur) => acc + cur, "");
 }
 
+function productOfArrayUsingReduce(inputArr) {
+  return inputArr.reduce((acc, cur) => acc * cur, 1);
+}
+
+function groupByPropertyUsingReduce(inputArr, property) {
+  return inputArr.reduce((acc, cur) => {
+    if (!acc[cur[property]]) {
+      acc[cur[property]] = [];
+    }
+    acc[cur[property]].push(cur);
+    return acc;
+  }, {});
+}
+function arrayToObjectUsingReduce(inputArr) {
+  return inputArr.reduce((acc, cur, i) => {
+    return {
+      ...acc,
+      [i]: cur,
+    };
+  }, {});
+}
+
+function convertKeysToArray(input) {
+  return Object.keys(input);
+}
+
+function convertValuesToArray(input) {
+  return Object.values(input);
+}
+
+function convertEntriesToArray(obj) {
+  return Object.entries(obj);
+}
 module.exports = {
   basicReduce,
   reduceWithInitialValue,
@@ -32,12 +65,12 @@ module.exports = {
   flattenArrayUsingReduce,
   countOccurrencesUsingReduce,
   concatenateStringsUsingReduce,
-  // productOfArrayUsingReduce,
-  // groupByPropertyUsingReduce,
-  // arrayToObjectUsingReduce,
-  // convertKeysToArray,
-  // convertValuesToArray,
-  // convertEntriesToArray,
+  productOfArrayUsingReduce,
+  groupByPropertyUsingReduce,
+  arrayToObjectUsingReduce,
+  convertKeysToArray,
+  convertValuesToArray,
+  convertEntriesToArray,
   // createStringArrayFromEntries,
   // filterEvenAndConvertToArray,
   // swapKeysAndValues,
