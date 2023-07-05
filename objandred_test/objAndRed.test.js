@@ -1,4 +1,8 @@
-const { basicReduce } = require("./objAndRed.js");
+const {
+  basicReduce,
+  reduceWithInitialValue,
+  findMinUsingReduce,
+} = require("./objAndRed.js");
 
 describe("reduce", () => {
   test("1.basic reduce operation", () => {

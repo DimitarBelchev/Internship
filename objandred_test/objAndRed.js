@@ -59,6 +59,14 @@
 function basicReduce(inputArr) {
   return inputArr.reduce((acc, cur) => (acc += cur), 0);
 }
-console.log(basicReduce([1, 2, 3, 4, 5]));
 
-module.exports = { basicReduce };
+function reduceWithInitialValue(inputArr, initVal) {
+  return inputArr.reduce((acc, cur) => (acc += cur), initVal);
+}
+
+function findMinUsingReduce(inputArr) {
+  return inputArr.reduce((a, b) => Math.min(a, b));
+}
+console.log(findMinUsingReduce([1, 2, 3, 4, 5]));
+
+module.exports = { basicReduce, reduceWithInitialValue, findMinUsingReduce };
