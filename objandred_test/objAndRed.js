@@ -55,9 +55,14 @@ function convertValuesToArray(input) {
   return Object.values(input);
 }
 
-function convertEntriesToArray(obj) {
-  return Object.entries(obj);
+function convertEntriesToArray(input) {
+  return Object.entries(input);
 }
+
+function createStringArrayFromEntries(input) {
+  return Object.entries(input).map(([k, v]) => `${k}: ${v}`);
+}
+
 module.exports = {
   basicReduce,
   reduceWithInitialValue,
@@ -71,7 +76,7 @@ module.exports = {
   convertKeysToArray,
   convertValuesToArray,
   convertEntriesToArray,
-  // createStringArrayFromEntries,
+  createStringArrayFromEntries,
   // filterEvenAndConvertToArray,
   // swapKeysAndValues,
   // mergeObjectsImmutably,
